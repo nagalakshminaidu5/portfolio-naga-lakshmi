@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>NagaLakshmi Naidu | Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<div class="grid-bg"></div>
+<div class="scanline"></div>
+<canvas id="particles"></canvas>
+
+<!-- PLAYER HUD -->
+<div class="player-hud" id="hud">
+  <button class="hud-toggle" onclick="document.getElementById('hud').style.display='none'">✕</button>
+  <div class="hud-title">▶ Player Profile</div>
+  <div class="hud-name">NagaLakshmi Naidu</div>
+  <div class="xp-bar-wrap">
+    <div class="xp-label"><span>Skills XP</span><span id="xp-num">0 / 1000</span></div>
+    <div class="xp-bar"><div class="xp-fill" id="xp-fill"></div></div>
+  </div>
+  <div class="hud-level" id="hud-level">LVL 1 — Initializing...</div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast">
+  <div class="toast-title" id="toast-title">🏆 Achievement Unlocked!</div>
+  <div id="toast-msg">Welcome</div>
+</div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a class="logo" href="#home"><span>{</span>NLN<span>}</span></a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#about" onclick="closeMenu()">about</a></li>
+      <li><a href="#skills" onclick="closeMenu()">skills</a></li>
+      <li><a href="#education" onclick="closeMenu()">education</a></li>
+      <li><a href="#projects" onclick="closeMenu()">projects</a></li>
+      <li><a href="#experience" onclick="closeMenu()">experience</a></li>
+      <li><a href="#contact" onclick="closeMenu()">contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section class="hero" id="home">
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-tag"><span class="pulse-dot"></span>open to opportunities</div>
+      <h1 class="hero-name">NagaLakshmi<br><span class="outline">Naidu</span></h1>
+      <div class="hero-role"><span class="muted">$ role = </span>"<span id="typed-text"></span><span class="cursor-blink">|</span>"</div>
+      <p class="hero-desc">Computer Science Engineering graduate passionate about building scalable, user-friendly, and secure web applications using Java Full Stack technologies.</p>
+      <div class="hero-btns">
+        <a class="btn-p" href="#projects">View Projects</a>
+        <a class="btn-o" href="#contact">Get in Touch</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-n">4+</span><span class="stat-l">Projects</span></div>
+        <div class="stat-div"></div>
+        <div class="stat"><span class="stat-n">2</span><span class="stat-l">Internships</span></div>
+        <div class="stat-div"></div>
+        <div class="stat"><span class="stat-n">8.06</span><span class="stat-l">CGPA</span></div>
+        <div class="stat-div"></div>
+        <div class="stat"><span class="stat-n" id="ach-count">0</span><span class="stat-l">Achievements</span></div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-img-frame">
+        <img src="./assets/images/Hero-pic.jpeg" alt="NagaLakshmi"/>
+        <div class="frame-border"></div>
+      </div>
+      <div class="float-badge fb1">☕ Java Dev</div>
+      <div class="float-badge fb2">🌱 Spring Boot</div>
+      <div class="float-badge fb3">⚛️ React</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ABOUT ══ -->
+<section id="about" class="bg-alt">
+  <div class="sec-inner">
+    <div class="sec-label">01 / about</div>
+    <h2 class="sec-title">Who I <span class="dim">Am</span></h2>
+    <div class="about-grid reveal">
+      <div>
+        <div class="about-photo-wrap">
+          <img class="about-photo" src="./assets/images/Profile.jpeg" alt="NagaLakshmi Naidu"/>
+          <div class="about-photo-border"></div>
+        </div>
+        <div class="about-chips">
+          <span class="achip">☕ Java Dev</span>
+          <span class="achip">🏐 Volleyball</span>
+          <span class="achip">🎯 Problem Solver</span>
+        </div>
+      </div>
+      <div class="about-text">
+        <p>Hi! I'm <strong>NagaLakshmi Naidu</strong>, a Computer Science Engineering graduate with a passion for Java Full Stack Development. I love building scalable web applications that are efficient and secure.</p>
+        <p>I'm skilled in end-to-end application development using Java, JSP, Servlets, JDBC, Spring Boot, MySQL, React, and modern web technologies. Quick learner with strong problem-solving and debugging skills.</p>
+        <p>Outside of coding, I'm a university-level volleyball player who won a <strong>State-Level Under-17 Volleyball Championship</strong> — teamwork and competitive spirit are in my DNA!</p>
+        <div class="info-grid">
+          <div class="info-item"><b>Email</b>nagalakshminaidu5@gmail.com</div>
+          <div class="info-item"><b>Phone</b>+91 8143969635</div>
+          <div class="info-item"><b>Degree</b>B.Tech CSE · CGPA 8.06</div>
+          <div class="info-item"><b>Status</b>Open to Work</div>
+        </div>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+          <a class="btn-p" href="https://github.com/nagalakshminaidu5" target="_blank">GitHub</a>
+          <a class="btn-o" href="https://linkedin.com" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SKILLS ══ -->
+<section id="skills">
+  <div class="sec-inner">
+    <div class="sec-label">02 / skills</div>
+    <h2 class="sec-title">Tech <span class="dim">Stack</span></h2>
+    <div class="skills-cat">Languages</div>
+    <div class="skills-grid reveal">
+      <div class="skill-chip"><div class="skill-icon">☕</div><div class="skill-name">Java</div></div>
+      <div class="skill-chip"><div class="skill-icon">🟨</div><div class="skill-name">JavaScript</div></div>
+    </div>
+    <div class="skills-cat">Frontend</div>
+    <div class="skills-grid reveal">
+      <div class="skill-chip"><div class="skill-icon">🌐</div><div class="skill-name">HTML5</div></div>
+      <div class="skill-chip"><div class="skill-icon">🎨</div><div class="skill-name">CSS3</div></div>
+      <div class="skill-chip"><div class="skill-icon">🅱️</div><div class="skill-name">Bootstrap</div></div>
+      <div class="skill-chip"><div class="skill-icon">⚛️</div><div class="skill-name">React</div></div>
+      <div class="skill-chip"><div class="skill-icon">📄</div><div class="skill-name">JSP</div></div>
+    </div>
+    <div class="skills-cat">Backend & Database</div>
+    <div class="skills-grid reveal">
+      <div class="skill-chip"><div class="skill-icon">⚙️</div><div class="skill-name">Servlets</div></div>
+      <div class="skill-chip"><div class="skill-icon">🌱</div><div class="skill-name">Spring Boot</div></div>
+      <div class="skill-chip"><div class="skill-icon">🔗</div><div class="skill-name">JDBC</div></div>
+      <div class="skill-chip"><div class="skill-icon">🌐</div><div class="skill-name">REST APIs</div></div>
+      <div class="skill-chip"><div class="skill-icon">🐬</div><div class="skill-name">MySQL</div></div>
+    </div>
+    <div class="skills-cat">Tools & Concepts</div>
+    <div class="skills-grid reveal">
+      <div class="skill-chip"><div class="skill-icon">🐙</div><div class="skill-name">GitHub</div></div>
+      <div class="skill-chip"><div class="skill-icon">🏃</div><div class="skill-name">Agile/Scrum</div></div>
+      <div class="skill-chip"><div class="skill-icon">🧱</div><div class="skill-name">OOP</div></div>
+      <div class="skill-chip"><div class="skill-icon">🗄️</div><div class="skill-name">DBMS</div></div>
+      <div class="skill-chip"><div class="skill-icon">🏗️</div><div class="skill-name">MVC</div></div>
+    </div>
+    <div class="skill-xp reveal">
+      <div class="skills-cat" style="margin-top:2.5rem;">Skill Proficiency</div>
+      <div class="xp-row"><span class="xp-skill-name">Java</span><div class="xp-track"><div class="xp-prog" data-pct="88" style="background:linear-gradient(90deg,#7b5cff,#00ffe0)"></div></div><span class="xp-pct">88%</span></div>
+      <div class="xp-row"><span class="xp-skill-name">Spring Boot</span><div class="xp-track"><div class="xp-prog" data-pct="75" style="background:linear-gradient(90deg,#7b5cff,#00ffe0)"></div></div><span class="xp-pct">75%</span></div>
+      <div class="xp-row"><span class="xp-skill-name">MySQL</span><div class="xp-track"><div class="xp-prog" data-pct="82" style="background:linear-gradient(90deg,#7b5cff,#00ffe0)"></div></div><span class="xp-pct">82%</span></div>
+      <div class="xp-row"><span class="xp-skill-name">React</span><div class="xp-track"><div class="xp-prog" data-pct="70" style="background:linear-gradient(90deg,#ff4ecd,#7b5cff)"></div></div><span class="xp-pct">70%</span></div>
+      <div class="xp-row"><span class="xp-skill-name">JavaScript</span><div class="xp-track"><div class="xp-prog" data-pct="78" style="background:linear-gradient(90deg,#ff4ecd,#7b5cff)"></div></div><span class="xp-pct">78%</span></div>
+      <div class="xp-row"><span class="xp-skill-name">HTML/CSS</span><div class="xp-track"><div class="xp-prog" data-pct="90" style="background:linear-gradient(90deg,#00ffe0,#7b5cff)"></div></div><span class="xp-pct">90%</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ EDUCATION ══ -->
+<section id="education" class="bg-alt">
+  <div class="sec-inner">
+    <div class="sec-label">03 / education</div>
+    <h2 class="sec-title">My <span class="dim">Background</span></h2>
+    <div class="edu-list reveal">
+      <div class="edu-card">
+        <img class="edu-img" src="https://images.unsplash.com/photo-1562774053-701939374585?w=120&h=120&fit=crop" alt="University"/>
+        <div>
+          <div class="edu-year">2021 – 2025</div>
+          <div class="edu-deg">B.Tech in Computer Science Engineering</div>
+          <div class="edu-inst">Sri Sarathi Institute of Engineering and Technology, Nuzvidu</div>
+          <div class="edu-grade">CGPA: 8.06 / 10</div>
+        </div>
+      </div>
+      <div class="edu-card">
+        <img class="edu-img" src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=120&h=120&fit=crop" alt="College"/>
+        <div>
+          <div class="edu-year">2019 – 2021</div>
+          <div class="edu-deg">Intermediate — Science</div>
+          <div class="edu-inst">AP Balayogi Guru kulam Junior College, Kovvuru</div>
+          <div class="edu-grade">Percentage: 70%</div>
+        </div>
+      </div>
+      <div class="edu-card">
+        <img class="edu-img" src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=120&h=120&fit=crop" alt="School"/>
+        <div>
+          <div class="edu-year">2019</div>
+          <div class="edu-deg">SSC (10th Grade)</div>
+          <div class="edu-inst">ZPHS High School, Rajavaram</div>
+          <div class="edu-grade">CGPA: 9.2 / 10</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PROJECTS ══ -->
+<section id="projects">
+  <div class="sec-inner">
+    <div class="sec-label">04 / projects</div>
+    <h2 class="sec-title">Things I've <span class="dim">Built</span></h2>
+    <div class="proj-grid reveal">
+      <div class="proj-card">
+        <div class="proj-img-wrap">
+          <img class="proj-img" src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=220&fit=crop" alt="Smarthub"/>
+          <div class="proj-overlay"><a class="proj-link" href="https://github.com/nagalakshminaidu5/SmartCartSystem" target="_blank">View on GitHub →</a></div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-num">001</div>
+          <div class="proj-title">Smarthub — Smart Card Application</div>
+          <p class="proj-desc">Smart Card Management App using Spring Boot with RESTful APIs for card registration, activation, balance checking, and transaction history.</p>
+          <div class="proj-tags"><span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">REST API</span><span class="tag">MySQL</span></div>
+        </div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-img-wrap">
+          <img class="proj-img" src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400&h=220&fit=crop" alt="MediCore"/>
+          <div class="proj-overlay"><a class="proj-link" href="https://github.com/nagalakshminaidu5/HospitalWebApp2" target="_blank">View on GitHub →</a></div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-num">002</div>
+          <div class="proj-title">MediCore Plus — Hospital Management</div>
+          <p class="proj-desc">Scalable hospital management system with patient registration, appointments, billing, and MVC architecture with secure session management.</p>
+          <div class="proj-tags"><span class="tag">Servlets</span><span class="tag">JSP</span><span class="tag">JDBC</span><span class="tag">MySQL</span></div>
+        </div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-img-wrap">
+          <img class="proj-img" src="https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?w=400&h=220&fit=crop" alt="ATM"/>
+          <div class="proj-overlay"><a class="proj-link" href="https://github.com/nagalakshminaidu5/ATM-Simulator" target="_blank">View on GitHub →</a></div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-num">003</div>
+          <div class="proj-title">Order Service</div>
+          <p class="proj-desc">The Order Service is a Spring Boot–based microservice responsible for handling all order-related operations in an application. It manages order creation, processing, and tracking while interacting with other services like Product, Payment, and Inventory.</p>
+          <div class="proj-tags"><span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">Microservices</span><span class="tag">MySQL</span><span class="tag">REST APIs</span></div>
+        </div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-img-wrap">
+          <img class="proj-img" src="https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?w=400&h=220&fit=crop" alt="Frost Bite"/>
+          <div class="proj-overlay"><a class="proj-link" href="https://github.com/nagalakshminaidu5/FrostBiteDelights" target="_blank">View on GitHub →</a></div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-num">004</div>
+          <div class="proj-title">Frost Bite Delights — Ice Cream Parlour</div>
+          <p class="proj-desc">Responsive ice cream parlour website with dynamic product listings, interactive menus, pricing sections, and JS form validation.</p>
+          <div class="proj-tags"><span class="tag">React</span><span class="tag">Bootstrap</span><span class="tag">JavaScript</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ EXPERIENCE ══ -->
+<section id="experience" class="bg-alt">
+  <div class="sec-inner">
+    <div class="sec-label">05 / experience</div>
+    <h2 class="sec-title">Where I've <span class="dim">Worked</span></h2>
+    <div class="exp-timeline reveal">
+      <div class="exp-item">
+        <div class="exp-dot"></div>
+        <div class="exp-period">Sep 2025 – Present</div>
+        <div class="exp-role">Java Full Stack Developer — Professional Training</div>
+        <div class="exp-company">Vcube Software Solutions</div>
+        <p class="exp-desc">Comprehensive training in frontend and backend using Java, Spring Boot, Servlets, and JSP. Developed RESTful APIs, worked with MySQL and JDBC, implemented MVC architecture, and collaborated in Agile-based workflows.</p>
+      </div>
+      <div class="exp-item">
+        <div class="exp-dot"></div>
+        <div class="exp-period">May 2023 – Sep 2023</div>
+        <div class="exp-role">Java Full Stack Developer — Intern</div>
+        <div class="exp-company">KodNest — Digital Skills Readiness Program</div>
+        <p class="exp-desc">Intensive internship on Java Full Stack Development. Hands-on experience in Core Java, OOP, Servlets, JSP, and JDBC. Developed dynamic web applications and integrated MySQL databases for real-time data management.</p>
+      </div>
+    </div>
+
+    <div class="sub-label">Certifications</div>
+    <div class="cert-grid reveal">
+      <div class="cert-card"><span class="cert-icon">📜</span><span class="cert-name">JSP — Data Flair</span></div>
+      <div class="cert-card"><span class="cert-icon">📜</span><span class="cert-name">Git — Udemy</span></div>
+      <div class="cert-card"><span class="cert-icon">📜</span><span class="cert-name">HTML & CSS — Udemy</span></div>
+      <div class="cert-card"><span class="cert-icon">📜</span><span class="cert-name">JavaScript — Udemy</span></div>
+    </div>
+
+    <div class="sub-label">Achievements</div>
+    <div class="achieve-list reveal">
+      <div class="achieve-item"><span class="ai-icon">🏆</span><p class="ai-text">Secured Second Runner-Up in a college-level PPT presentation competition (2024).</p></div>
+      <div class="achieve-item"><span class="ai-icon">🏐</span><p class="ai-text">Represented the college as a University-Level Volleyball Player (2024–2025).</p></div>
+      <div class="achieve-item"><span class="ai-icon">🥇</span><p class="ai-text">Won State-Level Under-17 Volleyball Championship — teamwork, leadership, and competitive excellence.</p></div>
+    </div>
+
+    <div class="achievements-panel">
+      <div class="sub-label">🎮 Achievements Unlocked</div>
+      <div class="ach-grid reveal" id="ach-grid">
+        <div class="ach-badge locked" data-id="coder"><div class="ach-emoji">💻</div><div class="ach-name">Code Warrior</div><div class="ach-desc">Visit Projects</div></div>
+        <div class="ach-badge locked" data-id="networker"><div class="ach-emoji">🤝</div><div class="ach-name">Networker</div><div class="ach-desc">Visit Contact</div></div>
+        <div class="ach-badge locked" data-id="learner"><div class="ach-emoji">🎓</div><div class="ach-name">Scholar</div><div class="ach-desc">Visit Education</div></div>
+        <div class="ach-badge locked" data-id="explorer"><div class="ach-emoji">🗺️</div><div class="ach-name">Explorer</div><div class="ach-desc">Visit All Sections</div></div>
+        <div class="ach-badge locked" data-id="champion"><div class="ach-emoji">🏆</div><div class="ach-name">Champion</div><div class="ach-desc">Volleyball State Win</div></div>
+        <div class="ach-badge locked" data-id="fullstack"><div class="ach-emoji">⚡</div><div class="ach-name">Full Stack</div><div class="ach-desc">Know all skills</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT ══ -->
+<section id="contact">
+  <div class="sec-inner">
+    <div class="sec-label">06 / contact</div>
+    <h2 class="sec-title">Let's <span class="dim">Connect</span></h2>
+    <div class="contact-grid reveal">
+      <div>
+        <p class="contact-desc">I'm currently open to new opportunities. Whether you have a project in mind, a question, or just want to say hi — my inbox is always open.</p>
+        <div class="contact-links">
+          <a class="c-link" href="mailto:nagalakshminaidu5@gmail.com"><div class="c-icon">@</div>nagalakshminaidu5@gmail.com</a>
+          <a class="c-link" href="tel:+918143969635"><div class="c-icon">📞</div>+91 8143969635</a>
+          <a class="c-link" href="https://github.com/nagalakshminaidu5" target="_blank"><div class="c-icon">GH</div>github.com/nagalakshminaidu5</a>
+          <a class="c-link" href="https://linkedin.com" target="_blank"><div class="c-icon">LI</div>linkedin.com/in/nagalakshminaidu</a>
+        </div>
+      </div>
+      <div>
+        <div class="contact-form" id="contact-form">
+          <div id="sent-msg" class="sent-msg" style="display:none">✅ Message sent! I'll get back to you soon.</div>
+          <input type="text" id="cf-name" placeholder="Your Name" required/>
+          <input type="email" id="cf-email" placeholder="Your Email" required/>
+          <textarea id="cf-msg" placeholder="Your Message" rows="5" required></textarea>
+          <button class="btn-p" onclick="sendMsg()" style="width:fit-content;">Send Message</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo"><span>{</span>NLN<span>}</span></div>
+  <p class="footer-text">Designed & built with <span class="footer-heart">♥</span> by NagaLakshmi Naidu · 2025</p>
+  <p class="footer-text" style="margin-top:.3rem;font-size:.7rem;color:var(--border);">Java Full Stack Developer</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
